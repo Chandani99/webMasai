@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Poppins:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+    .container{
+        width:80%;
+        margin: auto;
+        height: auto;
+        padding-top: 20px;
+        padding-bottom: 30px;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: auto;
+        gap: 30px;
+    }
+    .logo{
+        width: 100px;
+        height: 100px;
+        margin-left: 100px;
+        margin-top: -30px;
+    }
+</style>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+     //h1 ans css for h1
+    var heading=document.createElement("h1");
+    heading.innerText="List Of Products";
+    heading.style.textAlign="center";
+    heading.style.fontWeight="bolder";
+    heading.style.fontSize="40px";
+    heading.style.marginTop="50px";
+    // catching the body and adding h1 in body section
+    var body=document.querySelector("body");
+    body.style.fontFamily="'Poppins', sans-serif";
+    body.append(heading);
+
+    //Creating div element
+    var div=document.createElement("div");
+    div.setAttribute("class","container");
+    //Appending the body by adding div element
+    body.append(div);
+
+    // object data of investors
+    var investors = [
+    {
+      id: 1,
+     
+      image:
+        "https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi1.jpg.pagespeed.ic.mkSk-Af1ka.webp",
+     
+      name: "LATEST MEN'S SNEAKER",
+      price: "$25.00",
+      pricePrevious:"$95.00"
+
+    },
+    {
+      id: 2,
+      image:
+        "https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi2.jpg.pagespeed.ic.uBrpABaJqp.webp",
+     
+      name: "LATEST MEN'S SNEAKER",
+      price: "$35.00",
+      pricePrevious:"$100.00"
+     
+    },
+    {
+      id: 3,
+      image:
+        "https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi3.jpg.pagespeed.ic.iO_cFEPy2K.webp",
+     
+      name: "LATEST MEN'S SNEAKER",
+      price: "$35.00",
+      pricePrevious:"$100.00"
+      
+    },
+    {
+      id: 4,
+      image:
+        "https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi4.jpg.pagespeed.ic.kmiQW8I5wx.webp",
+     
+      name: "LATEST MEN'S SNEAKER",
+      price: "$35.00",
+      pricePrevious:"$100.00"
+      
+    },
+    
+      
+  ];
+
+
+  // Accessing all data from the object using map().
+
+investors.map(function(el){
+    var boxes=document.createElement("div");
+    boxes.setAttribute("class","box");
+    boxes.style.borderRadius="10px";
+    boxes.style.paddingBottom="20px"
+    boxes.style.boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px";
+
+    var img=document.createElement("img");
+    img.src=el.image;
+    img.style.borderRadius="10px";
+    img.style.width="100%";
+    
+    var productName=document.createElement("p");
+    productName.innerText=el.name;
+    productName.style.fontSize="22px"
+    productName.style.marginLeft="30px";
+    
+    var info=document.createElement("div");
+    info.style.width="80%";
+    info.style.margin="auto"
+    info.style.height="auto";
+    info.style.display="flex";
+    //info.style.justifyContent="space-between";
+
+    var price=document.createElement("h2");
+    price.innerText=el.price;
+    
+
+    var pricePrevious=document.createElement("p");
+    pricePrevious.innerText=el.pricePrevious;
+    pricePrevious.style.color="gray";
+    pricePrevious.style.textDecoration="line-through";
+    pricePrevious.style.marginLeft="40px";
+    pricePrevious.style.marginTop="25px"
+    // adding price and pr price in info div
+    info.append(price, pricePrevious);
+    // appending the child div
+    boxes.append(img, productName, info);
+    //appending parent div
+    div.append(boxes);
+
+})
+
+</script>

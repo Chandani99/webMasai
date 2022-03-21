@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+</body>
+
+</html>
+<script>
+    var div=document.createElement("div");
+    div.style.width="95%";
+    div.style.margin="auto";
+    div.style.marginTop="50px"
+    div.style.display="flex";
+    div.style.justifyContent = "space-between"
+    document.querySelector("body").append(div);
+     var buttonObject = [
+    { innerText: "Primary", color: "white", bgColor: "blue" },
+    { innerText: "Secondary", color: "white", bgColor: "grey" },
+    {innerText: "Success", color: "white", bgColor: "green" },
+    { innerText: "Danger", color: "white", bgColor: "red" },
+    { innerText: "Warning", color: "black", bgColor: "yellow" },
+    { innerText: "Info", color: "white", bgColor: "#00baf2" },
+    { innerText: "Light", color: "black", bgColor: "#f3eee9" }, 
+    { innerText: "Dark", color: "white", bgColor: "black" },
+    { innerText: "Link", color: "blue", bgColor: "white" },
+  ];
+   buttonObject.map(function(el){
+    var btn = document.createElement("button");
+    btn.textContent=el.innerText;
+    btn.style.backgroundColor=el.bgColor;
+    btn.style.color=el.color;
+    btn.style.padding="30px";
+    btn.style.paddingTop="20px";
+    btn.style.paddingBottom="20px";
+    btn.style.fontSize="35px";
+    btn.style.borderRadius="10px";
+    btn.style.border="none"
+    document.querySelector("div").append(btn);
+   });
+</script>
